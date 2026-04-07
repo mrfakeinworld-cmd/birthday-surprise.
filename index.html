@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For Malika</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg">
+    <div class="aurora"></div>
+    <div class="grain"></div>
+    <canvas id="fx"></canvas>
+  </div>
+
+  <main class="app">
+    <!-- Screen 1: Lock -->
+    <section class="screen active" id="screen-lock" aria-label="Lock screen">
+      <div class="card glass">
+        <div class="badge">✨ Premium Surprise ✨</div>
+        <h1 class="title-script">Welcome</h1>
+        <p class="subtitle">Enter the password to unlock the surprise</p>
+
+        <div class="field">
+          <input id="password" type="password" placeholder="Password" autocomplete="off" />
+          <button id="btn-unlock" class="btn primary">Unlock</button>
+        </div>
+
+        <p class="hint">Password is case-sensitive.</p>
+        <p class="error" id="lock-error" hidden>Wrong password. Try again…</p>
+      </div>
+    </section>
+
+    <!-- Screen 2: Choice -->
+    <section class="screen" id="screen-choice" aria-label="Choice screen">
+      <div class="card glass">
+        <h2 class="title">Do you need a surprise?</h2>
+        <p class="subtitle">Choose wisely…</p>
+
+        <div class="row">
+          <button id="btn-need" class="btn primary">Need surprise</button>
+          <button id="btn-noneed" class="btn ghost">No need of surprise</button>
+        </div>
+
+        <p class="tiny" id="choice-tease" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Screen 3: Gift + Cake -->
+    <section class="screen" id="screen-surprise" aria-label="Surprise screen">
+      <div class="scene">
+        <div class="topbar">
+          <div class="pill">🎈 Make a wish</div>
+          <div class="pill">💖 For Malika</div>
+        </div>
+
+        <div class="stage">
+          <div class="gift" id="gift">
+            <div class="gift-lid"></div>
+            <div class="gift-box"></div>
+            <div class="gift-ribbon"></div>
+          </div>
+
+          <div class="cake-wrap" id="cakeWrap" aria-hidden="true">
+            <div class="cake">
+              <div class="cake-top">
+                <div class="icing"></div>
+                <div class="text-on-cake">Happy Birthday Malika</div>
+                <div class="candles" id="candles">
+                  <div class="candle"><span class="flame"></span></div>
+                  <div class="candle"><span class="flame"></span></div>
+                  <div class="candle"><span class="flame"></span></div>
+                  <div class="candle"><span class="flame"></span></div>
+                  <div class="candle"><span class="flame"></span></div>
+                </div>
+              </div>
+
+              <div class="cake-body"></div>
+              <div class="cake-base"></div>
+
+              <div class="slice" id="slice" aria-hidden="true"></div>
+            </div>
+
+            <div class="actions">
+              <button id="btn-wishdone" class="btn primary">Wish done</button>
+              <button id="btn-mywish" class="btn ghost" disabled>My wish</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating">
+          <div class="balloon b1"></div>
+          <div class="balloon b2"></div>
+          <div class="balloon b3"></div>
+          <div class="balloon b4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 4: Letter -->
+    <section class="screen" id="screen-letter" aria-label="Letter screen">
+      <div class="card glass letter-card">
+        <div class="envelope" id="envelope">
+          <div class="env-top"></div>
+          <div class="env-body"></div>
+          <div class="env-heart">❤️</div>
+        </div>
+
+        <article class="letter" id="letter" aria-hidden="true">
+          <h3 class="title-script">My Wish</h3>
+          <p>
+            Happy Birthday to the most important person in my life ❤️❤️🌹🌹
+            <br><br>
+            Aj aik special day hy 👉🏻👈🏻
+            <br><br>
+            Likhny ko bhut kuch hy waisa lkn smjh nhi a rha khn sy shuro kroun bcz you the the one jo is waqt mera sbsy zaida qareeb aur mera lia subsy zaida important hy 🥹🥲
+            <br><br>
+            You mean a whole world to me 👉🏻👈🏻
+            <br><br>
+            The most important one ap jan hein meri ❤️🫂
+            <br><br>
+            Waisa to mein chata houn mujha ap milein lkn Trust me agr ap mujha na milein tb bhi it's ok bcz har insan ki life mein aik esa special person ata hy jo permanent nhi hota but wo life ko haseennnnnnnn aur bhutt axha bna deta hy and for mein wo special person ap Hein 🌹💗
+            <br><br>
+            You made my life sooooooooooooooooo beautiful ❤️😍
+            <br><br>
+            Thank you for coming into my life and making it soooooooooooooooooooooooooooooo better than it was ever before 🤞🏻😊❤️
+            <br><br>
+            Once again Happy Birthday mdm g ❤️💗🧬♾️💗
+          </p>
+        </article>
+
+        <div class="row center">
+          <button id="btn-replay" class="btn ghost">Replay</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
