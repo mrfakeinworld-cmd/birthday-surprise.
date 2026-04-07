@@ -54,13 +54,11 @@ const tease = document.getElementById("choice-tease");
 btnNoNeed.addEventListener("click", ()=>{
   tease.textContent = "Nice try… 😌 pick “Need surprise”";
   sparkleBurst(0.55, 0.42, 16);
-  // stays on same screen, playful loop
 });
 
 btnNeed.addEventListener("click", ()=>{
   tease.textContent = "";
   showScreen("surprise");
-  // open gift automatically after a short pause
   setTimeout(()=> openGift(true), 500);
 });
 
@@ -81,25 +79,20 @@ function openGift(auto=false){
   setTimeout(()=>{
     cakeWrap.classList.add("show");
     cakeWrap.setAttribute("aria-hidden","false");
-    // extra confetti + emoji pops
     sparkleBurst(0.5, 0.52, 50);
     emojiPopLoop(1600);
   }, 650);
 
   if(!auto){
-    // optional extra feedback if user taps gift
     sparkleBurst(0.48, 0.50, 20);
   }
 }
 gift.addEventListener("click", ()=> openGift(false));
 
 btnWishDone.addEventListener("click", ()=>{
-  // blow out candles
   candles.classList.add("out");
   sparkleBurst(0.5, 0.55, 36, false, "gold");
-  // cut slice
   setTimeout(()=> slice.classList.add("cut"), 500);
-  // enable my wish
   setTimeout(()=>{
     btnMyWish.disabled = false;
     btnMyWish.classList.add("primary");
@@ -111,7 +104,6 @@ btnWishDone.addEventListener("click", ()=>{
 btnMyWish.addEventListener("click", ()=>{
   showScreen("letter");
   setTimeout(()=> {
-    // reveal envelope + letter
     sparkleBurst(0.5, 0.32, 24);
   }, 200);
 });
@@ -129,7 +121,6 @@ envelope.addEventListener("click", ()=>{
 });
 
 btnReplay.addEventListener("click", ()=>{
-  // reset
   giftOpened = false;
   gift.classList.remove("open");
   cakeWrap.classList.remove("show");
@@ -146,7 +137,7 @@ btnReplay.addEventListener("click", ()=>{
   showScreen("lock");
 });
 
-/* Premium FX: sparkles + emoji */
+/* Premium FX */
 const canvas = document.getElementById("fx");
 const ctx = canvas.getContext("2d");
 let W=0,H=0;
