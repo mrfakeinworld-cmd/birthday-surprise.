@@ -1,4 +1,4 @@
-const PASSWORD = "Malika";
+const PASSWORD = "Malaika";
 
 const screens = {
   lock: document.getElementById("screen-lock"),
